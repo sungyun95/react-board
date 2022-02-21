@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { BrowserRouter, Routes, Route, Link, Outlet } from "react-router-dom";
+import React from "react";
+import { Routes, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CreateNote from "./components/create-note";
 import EditNote from "./components/edit-note";
