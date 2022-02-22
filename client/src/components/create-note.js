@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 function CreateNote() {
   const [note, setNote] = useState({
-    id: "",
+    date: "",
     title: "",
     content: "",
   });
@@ -10,7 +10,7 @@ function CreateNote() {
   const onChange = (event) => {
     const { name, value } = event.target;
     setNote((prev) => {
-      return { ...prev, id: Math.random(), date: Date(), [name]: value };
+      return { ...prev, date: Date(), [name]: value };
     });
   };
 
@@ -18,7 +18,6 @@ function CreateNote() {
     event.preventDefault();
     console.log(note);
     setNote({
-      id: "",
       date: "",
       title: "",
       content: "",
