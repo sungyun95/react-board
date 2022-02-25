@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 function CreateNote() {
   const [note, setNote] = useState({
@@ -17,6 +18,12 @@ function CreateNote() {
   const onSubmit = (event) => {
     event.preventDefault();
     console.log(note);
+
+    // axios.post 메소드를 사용하여 백엔드 엔드포인트 http://localhost:4000/notes/add 에 HTTP POST 요청
+    axios
+      .post("http://localhost:4000/notes/add", note)
+      .then((res) => console.log(res.data));
+
     setNote({
       date: "",
       title: "",
@@ -55,7 +62,7 @@ function CreateNote() {
           <input
             style={{ marginTop: 10 }}
             type="submit"
-            value="Create Todo"
+            value="Create Note"
             className="btn btn-primary"
           />
         </div>
