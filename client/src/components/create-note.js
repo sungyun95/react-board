@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function CreateNote() {
+  let navigate = useNavigate();
   const [note, setNote] = useState({
     date: "",
     title: "",
@@ -29,6 +31,7 @@ function CreateNote() {
       title: "",
       content: "",
     });
+    navigate("/");
   };
 
   return (

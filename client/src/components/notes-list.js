@@ -5,7 +5,6 @@ import Note from "./note";
 function NotesList() {
   const [notes, setNotes] = useState([]);
   // componentDidMount 라이프사이클 메소드 => useEffect로 대체
-
   useEffect(() => {
     axios
       .get("http://localhost:4000/notes/")
